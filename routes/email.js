@@ -19,23 +19,25 @@ const transporter = nodemailer.createTransport({
 
 
 /* POST send email. */
-router.post('/', async (req, res, next) => {
+router.post('/send', async (req, res, next) => {
     const mailOptions = {
-        from: 'your_email@service.com',
-        to: 'receiver_email@service.com',
+        from: 'ajejoseph22@gmail.com',
+        to: 'joseph.aje@trilogy.com',
         subject: 'This is subject',
         text: 'This is email content'
     };
 
+    let result;
+
     try {
-        const result = await transporter.sendMail(mailOptions);
+        result = await transporter.sendMail(mailOptions);
     } catch (e) {
         console.log(e);
     } finally {
         transporter.close();
     }
 
-    res.send('send email works');
+    res.send(result);
 });
 
 module.exports = router;

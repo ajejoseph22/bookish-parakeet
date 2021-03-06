@@ -5,7 +5,7 @@ const logger = require('morgan');
 
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
-const sendEmailRoute = require('./routes/send-email');
+const emailRoute = require('./routes/email');
 
 const app = express();
 
@@ -17,6 +17,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/send-email', sendEmailRoute);
+app.use('/email', emailRoute);
 
 module.exports = app;
