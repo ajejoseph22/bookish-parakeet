@@ -1,13 +1,12 @@
-import logo from './logo.svg';
-import './App.css';
 import ComposeEmail from "./components/compose-email";
+import './App.css';
 
 function App() {
-    return (
-        <div>
-            <ComposeEmail/>
-        </div>
-    );
+  return (
+    <div className="app">
+      <ComposeEmail />
+    </div>
+  );
 }
 
 export default App;
